@@ -6,6 +6,7 @@ class RectangularInputField extends StatelessWidget {
   final String hintText;
   final IconData icon;
   final bool obscureText;
+  // ignore: use_key_in_widget_constructors
   const RectangularInputField(
       {Key? key,
       required this.hintText,

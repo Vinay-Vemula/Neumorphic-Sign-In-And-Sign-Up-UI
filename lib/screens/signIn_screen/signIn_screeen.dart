@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:neumorphic_signin_and_signup/constants/constants.dart';
 import 'package:neumorphic_signin_and_signup/screens/forget_password/forget_password.dart';
@@ -13,7 +15,7 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -29,11 +31,11 @@ class SignInScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _head_text(context),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               _credential_container(context),
-              SizedBox(
+              const SizedBox(
                 height: 2,
               ),
               _social_icons(context),
@@ -53,11 +55,11 @@ class SignInScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: size.height * 0.1),
-          Text(
+          const Text(
             "Welcome",
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
           ),
-          Text(
+          const Text(
             "Vinay Vemula",
             style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
           ),
@@ -72,28 +74,30 @@ class SignInScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             "Sign In",
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
           ),
-          SizedBox(
+          const SizedBox(
             height: 2,
           ),
-          RectangularInputField(
+          const RectangularInputField(
               hintText: "Email Id", icon: Icons.email, obscureText: false),
-          SizedBox(
+          const SizedBox(
             height: 2,
           ),
-          RectangularInputField(
+          const RectangularInputField(
               hintText: "Password", icon: Icons.lock, obscureText: true),
-          SizedBox(
+          const SizedBox(
             height: 2,
           ),
           Center(
             child: InkWell(
-              onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ForgetPassword())),
-              child: Text(
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ForgetPassword())),
+              child: const Text(
                 "Forget Password ?",
                 style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
               ),
@@ -108,7 +112,7 @@ class SignInScreen extends StatelessWidget {
   Widget _social_icons(BuildContext context) {
     return Column(
       children: [
-        Center(
+        const Center(
             child: Text(
           "Or",
           style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
@@ -130,14 +134,14 @@ class SignInScreen extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: appPadding,
         ),
         AccountCheck(
             login: true,
             press: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return SignUpScreen();
+                return const SignUpScreen();
               }));
             }),
       ],

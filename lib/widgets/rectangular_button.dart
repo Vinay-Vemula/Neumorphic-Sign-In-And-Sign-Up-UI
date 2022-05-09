@@ -40,7 +40,7 @@ class RectangularButton extends StatelessWidget {
             child: Center(
               child: Text(
                 text,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
               ),
             ),
           ),

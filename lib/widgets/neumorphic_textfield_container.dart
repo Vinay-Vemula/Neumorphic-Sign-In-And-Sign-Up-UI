@@ -10,9 +10,9 @@ class NeumorphicTextfieldContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.symmetric(vertical: appPadding / 3),
+      margin: const EdgeInsets.symmetric(vertical: appPadding / 3),
       decoration: BoxDecoration(
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.centerRight,
               colors: [
@@ -20,7 +20,7 @@ class NeumorphicTextfieldContainer extends StatelessWidget {
                 darkPrimary,
               ]),
           borderRadius: BorderRadius.circular(12),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
                 offset: Offset(-2, -2),
                 spreadRadius: 1,

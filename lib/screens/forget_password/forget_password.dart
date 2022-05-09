@@ -1,7 +1,8 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:neumorphic_signin_and_signup/constants/constants.dart';
 import 'package:neumorphic_signin_and_signup/screens/signIn_screen/signIn_screeen.dart';
-import 'package:neumorphic_signin_and_signup/widgets/account_check.dart';
 import 'package:neumorphic_signin_and_signup/widgets/rectangular_button.dart';
 import 'package:neumorphic_signin_and_signup/widgets/rectangular_input_field.dart';
 import 'package:neumorphic_signin_and_signup/widgets/rounded_button.dart';
@@ -12,7 +13,7 @@ class ForgetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -28,7 +29,7 @@ class ForgetPassword extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _head_text(context),
-              SizedBox(
+              const SizedBox(
                 height: 1,
               ),
               _credential_container(context),
@@ -40,6 +41,7 @@ class ForgetPassword extends StatelessWidget {
     );
   }
 
+  // ignore: non_constant_identifier_names
   Widget _head_text(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Padding(
@@ -49,11 +51,11 @@ class ForgetPassword extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: size.height * 0.1),
-          Text(
+          const Text(
             "Welcome",
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
           ),
-          Text(
+          const Text(
             "Vinay Vemula",
             style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
           ),
@@ -68,20 +70,20 @@ class ForgetPassword extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             "Forget Password",
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
           ),
-          SizedBox(
+          const SizedBox(
             height: 1,
           ),
-          RectangularInputField(
+          const RectangularInputField(
               hintText: "New Password", icon: Icons.phone, obscureText: true),
-          RectangularInputField(
+          const RectangularInputField(
               hintText: "Confirm New Password",
               icon: Icons.lock,
               obscureText: false),
-          SizedBox(
+          const SizedBox(
             height: 2,
           ),
           RectangularButton(press: () {}, text: "Save Password")
@@ -93,7 +95,7 @@ class ForgetPassword extends StatelessWidget {
   Widget _social_icons(BuildContext context) {
     return Column(
       children: [
-        Center(
+        const Center(
             child: Text(
           "Or",
           style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
@@ -115,7 +117,7 @@ class ForgetPassword extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 40,
         ),
         Padding(
@@ -124,14 +126,16 @@ class ForgetPassword extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(
+              const Text(
                 "Remember your password?",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
               ),
               TextButton(
-                  onPressed: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SignInScreen())),
-                  child: Text(
+                  onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignInScreen())),
+                  child: const Text(
                     "Sign In",
                     style: TextStyle(
                         fontSize: 20,
