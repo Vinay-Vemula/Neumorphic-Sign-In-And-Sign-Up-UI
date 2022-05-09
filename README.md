@@ -1,7 +1,6 @@
-##Neumorphic Signin and Signup
+## Neumorphic Signin and Signup
 
-A new Flutter project.
-
+Neumorphism is a design technique that is based around soft UI elements. Think of a frost effect or a glassy blur. Elements appear to extrude from the background, which makes them stand out. But since they tend to use a soft UI color palette, the effect is usually more subtle than bold.
 ## Getting Started
 
 This project is a starting point for a Flutter application.
