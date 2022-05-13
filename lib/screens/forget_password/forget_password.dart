@@ -78,11 +78,17 @@ class ForgetPassword extends StatelessWidget {
             height: 1,
           ),
           const RectangularInputField(
-              hintText: "New Password", icon: Icons.phone, obscureText: true),
+            hintText: "New Password",
+            icon: Icons.phone,
+            obscureText: true,
+            controller: "",
+          ),
           const RectangularInputField(
-              hintText: "Confirm New Password",
-              icon: Icons.lock,
-              obscureText: false),
+            hintText: "Confirm New Password",
+            icon: Icons.lock,
+            obscureText: false,
+            controller: "",
+          ),
           const SizedBox(
             height: 2,
           ),

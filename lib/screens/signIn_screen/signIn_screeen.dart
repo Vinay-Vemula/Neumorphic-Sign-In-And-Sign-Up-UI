@@ -1,5 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:neumorphic_signin_and_signup/constants/constants.dart';
 import 'package:neumorphic_signin_and_signup/screens/forget_password/forget_password.dart';
@@ -9,8 +10,30 @@ import 'package:neumorphic_signin_and_signup/widgets/rectangular_button.dart';
 import 'package:neumorphic_signin_and_signup/widgets/rectangular_input_field.dart';
 import 'package:neumorphic_signin_and_signup/widgets/rounded_button.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
+
+  @override
+  State<SignInScreen> createState() => _SignInScreenState();
+}
+
+class _SignInScreenState extends State<SignInScreen> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  Future signIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: _emailController.text.trim(),
+      password: _passwordController.text.trim(),
+    );
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -81,13 +104,21 @@ class SignInScreen extends StatelessWidget {
           const SizedBox(
             height: 2,
           ),
-          const RectangularInputField(
-              hintText: "Email Id", icon: Icons.email, obscureText: false),
+          RectangularInputField(
+            hintText: "Email Id",
+            icon: Icons.email,
+            obscureText: false,
+            controller: _emailController,
+          ),
           const SizedBox(
             height: 2,
           ),
-          const RectangularInputField(
-              hintText: "Password", icon: Icons.lock, obscureText: true),
+          RectangularInputField(
+            hintText: "Password",
+            icon: Icons.lock,
+            obscureText: true,
+            controller: _passwordController,
+          ),
           const SizedBox(
             height: 2,
           ),
@@ -103,7 +134,7 @@ class SignInScreen extends StatelessWidget {
               ),
             ),
           ),
-          RectangularButton(press: () {}, text: "Sign In")
+          RectangularButton(press: signIn, text: "Sign In")
         ],
       ),
     );

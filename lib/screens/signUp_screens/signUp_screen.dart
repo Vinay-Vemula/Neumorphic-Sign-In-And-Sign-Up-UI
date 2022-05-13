@@ -1,6 +1,9 @@
 // ignore_for_file: non_constant_identifier_names
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/get_core.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:neumorphic_signin_and_signup/constants/constants.dart';
 import 'package:neumorphic_signin_and_signup/screens/signIn_screen/signIn_screeen.dart';
 import 'package:neumorphic_signin_and_signup/widgets/account_check.dart';
@@ -8,8 +11,36 @@ import 'package:neumorphic_signin_and_signup/widgets/rectangular_button.dart';
 import 'package:neumorphic_signin_and_signup/widgets/rectangular_input_field.dart';
 import 'package:neumorphic_signin_and_signup/widgets/rounded_button.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
+
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  final _usernameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _mobileNumberController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  Future signUp() async {
+    var response = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim());
+    if (response != null) {
+      Get.to(() => SignInScreen());
+    }
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    _mobileNumberController.dispose();
+    _usernameController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -77,18 +108,34 @@ class SignUpScreen extends StatelessWidget {
           const SizedBox(
             height: 1,
           ),
-          const RectangularInputField(
-              hintText: "User Name", icon: Icons.person, obscureText: false),
-          const RectangularInputField(
-              hintText: "Email Id", icon: Icons.email, obscureText: false),
-          const RectangularInputField(
-              hintText: "Mobile Number", icon: Icons.phone, obscureText: true),
-          const RectangularInputField(
-              hintText: "Password", icon: Icons.lock, obscureText: false),
-          const SizedBox(
+          RectangularInputField(
+            hintText: "User Name",
+            icon: Icons.person,
+            obscureText: false,
+            controller: _usernameController,
+          ),
+          RectangularInputField(
+            hintText: "Email Id",
+            icon: Icons.email,
+            obscureText: false,
+            controller: _emailController,
+          ),
+          RectangularInputField(
+            hintText: "Mobile Number",
+            icon: Icons.phone,
+            obscureText: false,
+            controller: _mobileNumberController,
+          ),
+          RectangularInputField(
+            hintText: "Password",
+            icon: Icons.lock,
+            obscureText: false,
+            controller: _passwordController,
+          ),
+          SizedBox(
             height: 2,
           ),
-          RectangularButton(press: () {}, text: "Sign Up")
+          RectangularButton(press: signUp, text: "Sign Up")
         ],
       ),
     );

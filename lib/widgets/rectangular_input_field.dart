@@ -6,17 +6,20 @@ class RectangularInputField extends StatelessWidget {
   final String hintText;
   final IconData icon;
   final bool obscureText;
+  final controller;
   // ignore: use_key_in_widget_constructors
   const RectangularInputField(
       {Key? key,
       required this.hintText,
       required this.icon,
-      required this.obscureText});
+      required this.obscureText,
+      required this.controller});
 
   @override
   Widget build(BuildContext context) {
     return NeumorphicTextfieldContainer(
       child: TextField(
+        controller: controller,
         cursorColor: black,
         obscureText: obscureText,
         decoration: InputDecoration(

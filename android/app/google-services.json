@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "563036761319",
+    "project_id": "demoapp-39854",
+    "storage_bucket": "demoapp-39854.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563036761319:android:6fb64e13f52bd299cfc642",
+        "android_client_info": {
+          "package_name": "com.example.neumorphic_signin_and_signup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563036761319-vildu4umiop5l2hgu66b39i0j1fcjdm1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.neumorphic_signin_and_signup",
+            "certificate_hash": "97b2be79441257e0094efd48dab1b2c47736c944"
+          }
+        },
+        {
+          "client_id": "563036761319-8q6ciofm4jho6mnhisigihfj7mpepoo7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYBA6cXjWLDcHzA-zLY4agJ8xoCrBf56Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "563036761319-8q6ciofm4jho6mnhisigihfj7mpepoo7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
