@@ -7,9 +7,16 @@ import 'package:neumorphic_signin_and_signup/widgets/rectangular_button.dart';
 import 'package:neumorphic_signin_and_signup/widgets/rectangular_input_field.dart';
 import 'package:neumorphic_signin_and_signup/widgets/rounded_button.dart';
 
-class ForgetPassword extends StatelessWidget {
+class ForgetPassword extends StatefulWidget {
   const ForgetPassword({super.key});
 
+  @override
+  State<ForgetPassword> createState() => _ForgetPasswordState();
+}
+
+class _ForgetPasswordState extends State<ForgetPassword> {
+  final _newPassword = TextEditingController();
+  final _confirmPassword = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -77,17 +84,17 @@ class ForgetPassword extends StatelessWidget {
           const SizedBox(
             height: 1,
           ),
-          const RectangularInputField(
+          RectangularInputField(
             hintText: "New Password",
-            icon: Icons.phone,
+            icon: Icons.lock_reset,
             obscureText: true,
-            controller: "",
+            controller: _newPassword,
           ),
-          const RectangularInputField(
+          RectangularInputField(
             hintText: "Confirm New Password",
             icon: Icons.lock,
             obscureText: false,
-            controller: "",
+            controller: _confirmPassword,
           ),
           const SizedBox(
             height: 2,

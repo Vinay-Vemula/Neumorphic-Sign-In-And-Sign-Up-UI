@@ -24,24 +24,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final _mobileNumberController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  Future signUp() async {
-    var response = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: _emailController.text.trim(),
-        password: _passwordController.text.trim());
-    if (response != null) {
-      Get.to(() => SignInScreen());
-    }
-  }
-
-  @override
-  void dispose() {
-    _emailController.dispose();
-    _passwordController.dispose();
-    _mobileNumberController.dispose();
-    _usernameController.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -135,7 +117,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           SizedBox(
             height: 2,
           ),
-          RectangularButton(press: signUp, text: "Sign Up")
+          RectangularButton(press: () {}, text: "Sign Up")
         ],
       ),
     );

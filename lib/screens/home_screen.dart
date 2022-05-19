@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
 import 'package:neumorphic_signin_and_signup/constants/constants.dart';
 
@@ -24,7 +24,7 @@ class _ClaymorphisimState extends State<Claymorphisim> {
             width: 250,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(75),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                       offset: Offset(4, 4),
                       spreadRadius: -12,

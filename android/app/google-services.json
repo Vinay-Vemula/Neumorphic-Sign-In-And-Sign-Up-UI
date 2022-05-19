@@ -1,20 +1,20 @@
 {
   "project_info": {
-    "project_number": "563036761319",
-    "project_id": "demoapp-39854",
-    "storage_bucket": "demoapp-39854.appspot.com"
+    "project_number": "718756093788",
+    "project_id": "neuromorpic-screens",
+    "storage_bucket": "neuromorpic-screens.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:563036761319:android:6fb64e13f52bd299cfc642",
+        "mobilesdk_app_id": "1:718756093788:android:8e66b8b87c534e501a2b99",
         "android_client_info": {
           "package_name": "com.example.neumorphic_signin_and_signup"
         }
       },
       "oauth_client": [
         {
-          "client_id": "563036761319-vildu4umiop5l2hgu66b39i0j1fcjdm1.apps.googleusercontent.com",
+          "client_id": "718756093788-9efcgf7ibvpbdj31srbga2v19er2fpge.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.neumorphic_signin_and_signup",
@@ -22,20 +22,20 @@
           }
         },
         {
-          "client_id": "563036761319-8q6ciofm4jho6mnhisigihfj7mpepoo7.apps.googleusercontent.com",
+          "client_id": "718756093788-2lih9hdvsels24fqd92s1voof74kif0t.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAYBA6cXjWLDcHzA-zLY4agJ8xoCrBf56Q"
+          "current_key": "AIzaSyB4LpDdu6XQNkH0EnB_xWorQiI31Ql7a8M"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "563036761319-8q6ciofm4jho6mnhisigihfj7mpepoo7.apps.googleusercontent.com",
+              "client_id": "718756093788-2lih9hdvsels24fqd92s1voof74kif0t.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
